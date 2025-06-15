@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cores principais */
+    --color-primary: 196 100% 50%; /* #00A3FF (azul elétrico) */
+    --color-primary-dark: 263 100% 62%; /* #8F43FF (violeta digital) */
+    --color-secondary: 176 100% 57%; /* #22FFF7 (ciano vibrante) */
+    --color-accent: 333 91% 54%; /* #F43C93 (magenta digital) */
+    --color-gray-dark: 232 7% 17%; /* #202235 (cinza profundo) */
+    --color-gray-light: 220 42% 97%; /* #F5F7FB (cinza suave) */
+
+    /* Cores do sistema */
+    --background: 0 0% 100%; /* #FFFFFF (branco puro) */
+    --foreground: 232 7% 17%; /* #202235 (cinza profundo) */
+
+    --card: 0 0% 100%;
+    --card-foreground: 232 7% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 7% 17%;
+
+    /* Redefinição das cores do tema para corresponder à nova paleta */
+    --primary: 196 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 176 100% 57%;
+    --secondary-foreground: 232 7% 17%;
+
+    --muted: 220 42% 97%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 333 91% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 42% 97%;
+    --sidebar-foreground: 232 7% 17%;
+    --sidebar-primary: 196 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 42% 97%;
+    --sidebar-accent-foreground: 232 7% 17%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 196 100% 50%;
+  }
+
+  .dark {
+    --background: 232 7% 17%;
+    --foreground: 0 0% 100%;
+
+    --card: 232 7% 17%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 232 7% 17%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 196 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 176 100% 57%;
+    --secondary-foreground: 232 7% 17%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 333 91% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 100% 50%;
+
+    --sidebar-background: 232 7% 17%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 196 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 232 10% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 232 10% 25%;
+    --sidebar-ring: 196 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  button, .btn, .button {
+    @apply tracking-wide;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Link animado */
+  .animated-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Efeito hover em botões */
+  .hover-glow {
+    @apply hover:shadow-[0_0_15px_rgba(34,255,247,0.5)] transition-shadow duration-300;
+  }
+}
+
+@layer components {
+  /* Classe para gradiente azul-violeta */
+  .bg-blue-violet-gradient {
+    @apply bg-gradient-to-r from-primary to-[#8F43FF];
+  }
+
+  /* Classe para botões com gradiente */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-[#8F43FF] text-white hover:shadow-[0_0_15px_rgba(0,163,255,0.5)] transition-shadow duration-300;
+  }
+
+  /* Cards com sombra sutil */
+  .card-subtle {
+    @apply bg-white shadow-md shadow-primary/10 rounded-lg;
+  }
+}

@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #00A3FF;
+  --color-primary-dark: #8F43FF;
+  --color-secondary: #22FFF7;
+  --color-accent: #F43C93;
+  --color-cyan: #22FFF7;
+  --color-gray-dark: #202235;
+  --color-gray-light: #F5F7FB;
+
+  --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-heading: 'Montserrat', var(--font-sans);
+  --font-button: 'Poppins', var(--font-sans);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-gray-dark);
+  background-color: var(--color-gray-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+button, .button {
+  font-family: var(--font-button);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-blue-violet-gradient {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+}
+
+.btn-hover-effect:hover {
+  box-shadow: 0 0 15px rgba(0, 163, 255, 0.5);
+}
